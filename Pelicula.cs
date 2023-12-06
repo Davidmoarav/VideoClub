@@ -2,7 +2,7 @@ using System;
 
 namespace VideoClub
 {
-    public class Pelicula
+    public class Pelicula : Caracteristicas
     {
         private string titulo;
         private string genero;
@@ -39,6 +39,10 @@ namespace VideoClub
         {
             get { return cantidadVecesArrendada; }
             set { cantidadVecesArrendada = value; }
+        }
+
+        public override void MostrarDetalles(){
+            Console.WriteLine();
         }
     }
 }
