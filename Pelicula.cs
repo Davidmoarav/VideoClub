@@ -9,7 +9,7 @@ namespace VideoClub
         private int cantidadEjemplares;
         private int cantidadVecesArrendada;
 
-        public Pelicula(string titulo, string genero, int cantidadEjemplares)
+        public Pelicula(string titulo, string genero, int cantidadEjemplares) : base()
         {
             this.titulo = titulo;
             this.genero = genero;
