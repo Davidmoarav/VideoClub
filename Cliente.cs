@@ -38,10 +38,7 @@ namespace VideoClub
 
         public void MostrarInformacionCliente(){
             System.Console.WriteLine($"Informacion del Cliente:");
-            System.Console.WriteLine($"Nombre: {Nombre}\n",
-                    $"Apellido: {Apellido}\n",
-                    $"Rut: {RUT}\n",
-                    $"Correo: {Correo}");
+            System.Console.WriteLine($"Nombre: {Nombre}\nApellido: {Apellido}\nRut: {RUT}\nCorreo: {Correo}");
         }
     }
 }
