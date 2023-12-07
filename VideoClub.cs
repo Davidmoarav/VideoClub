@@ -39,6 +39,7 @@ namespace VideoClub
             return inventario;
         }
 
+        /*
         public void GenerarBoleta(Arriendo arriendo)
         {
             // Imprime los datos del arriendo
@@ -54,5 +55,6 @@ namespace VideoClub
             // Imprime el precio del arriendo
             Console.WriteLine("Precio: {0}", precio);
         }
+        */
     }
 }

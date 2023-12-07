@@ -43,9 +43,9 @@ namespace VideoClub
 
         public override void MostrarDetalles(){
             System.Console.WriteLine("Detalles de la Pelicula");
-            System.Console.WriteLine($"Titulo: {Titulo}\n"
-                    $"Genero: {Genero}\n"
-                    $"Cantidad Ejemplares: {CantidadEjemplares}\n"
+            System.Console.WriteLine($"Titulo: {Titulo}\n",
+                    $"Genero: {Genero}\n",
+                    $"Cantidad Ejemplares: {CantidadEjemplares}\n",
                     $"Veces arrendada: {CantidadVecesArrendada}");
         }
     }

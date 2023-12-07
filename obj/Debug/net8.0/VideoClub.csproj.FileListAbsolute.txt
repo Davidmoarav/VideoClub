@@ -1,0 +1,15 @@
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.AssemblyInfoInputs.cache
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.AssemblyInfo.cs
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.csproj.CoreCompileInputs.cache
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.sourcelink.json
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\bin\Debug\net8.0\VideoClub.exe
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\bin\Debug\net8.0\VideoClub.deps.json
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\bin\Debug\net8.0\VideoClub.runtimeconfig.json
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\bin\Debug\net8.0\VideoClub.dll
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\bin\Debug\net8.0\VideoClub.pdb
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.dll
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\refint\VideoClub.dll
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.pdb
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\VideoClub.genruntimeconfig.cache
+C:\Users\jorda\OneDrive\Escritorio\Trabajo_Programacion\VideoClub\obj\Debug\net8.0\ref\VideoClub.dll
