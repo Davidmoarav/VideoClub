@@ -4,7 +4,7 @@ using VideoClub;
 public class Program{
     static void Main(string[] args){
         Cliente cliente1 = new Cliente("jorge","perez","213131","holamundo@dad.cl");
-        cliente1.MostrarInformacionCliente();
+        
 
         bool salir = false;
         while (!salir)
@@ -22,6 +22,7 @@ public class Program{
                 case "1":
                     Console.WriteLine("Has elegido la opción 1.");
                     // poner el código 
+                    cliente1.MostrarInformacionCliente();
                     break;
                 case "2":
                     Console.WriteLine("Has elegido la opción 2.");
