@@ -5,5 +5,36 @@ public class Program{
     static void Main(string[] args){
         Cliente cliente1 = new Cliente("jorge","perez","213131","holamundo@dad.cl");
         cliente1.MostrarInformacionCliente();
+
+        bool salir = false;
+        while (!salir)
+        {
+            Console.WriteLine("===== Menú =====");
+            Console.WriteLine("1. Boleta");
+            Console.WriteLine("2. Peliculas");
+            Console.WriteLine("3. Salir");
+            Console.Write("Elige una opción: ");
+
+            string opcion = Console.ReadLine();
+
+            switch (opcion)
+            {
+                case "1":
+                    Console.WriteLine("Has elegido la opción 1.");
+                    // poner el código 
+                    break;
+                case "2":
+                    Console.WriteLine("Has elegido la opción 2.");
+                    break;
+                case "3":
+                    Console.WriteLine("Has elegido salir. ¡Hasta luego!");
+                    salir = true;
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. Por favor, elige una opción del menú.");
+                    break;
+            }
+        }
+
     }
 }
