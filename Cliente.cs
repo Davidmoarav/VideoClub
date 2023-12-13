@@ -4,17 +4,21 @@ namespace VideoClub
 {
     public class Cliente
     {
-        private string nombre;
-        private string apellido;
-        private string rut;
-        private string correo;
+        private string? nombre;
+        private string? apellido;
+        private string? rut;
+        private string? correo;
 
+        public Cliente(){
+        }
         public Cliente(string nombre, string apellido, string rut, string correo){
             this.nombre = nombre;
             this.apellido = apellido;
             this.rut = rut;
             this.correo = correo;
         }
+
+        
 
         public string Nombre{
             get{return nombre;}

@@ -1,47 +1,75 @@
-using System;
+﻿using System;
 using VideoClub;
 
 public class Program{
     static void Main(string[] args){
-        Cliente cliente1 = new Cliente("jorge","perez","213131","holamundo@dad.cl");
         
+        Cliente cliente1 = new Cliente();
+
+        VIDEOCLUB inventario1 = new VIDEOCLUB();
+        Pelicula peli1 = new Pelicula("sharknado","terror",2);
+
+        inventario1.AgregarPelicula(peli1);
+        inventario1.ObtenerInventario();
 
         bool salir = false;
         while (!salir)
         {
             Console.WriteLine("===== Menú =====");
-            Console.WriteLine("1. Boleta");
-            Console.WriteLine("2. Peliculas");
-            Console.WriteLine("3. Agregar Película");
-            Console.WriteLine("4. Salir");
+            Console.WriteLine("1. Datos cliente");
+            Console.WriteLine("2. Boleta");
+            Console.WriteLine("3. Peliculas");
+            Console.WriteLine("4. Agregar Película");
+            Console.WriteLine("5. Salir");
             Console.Write("Elige una opción: ");
 
-            string opcion = Console.ReadLine();
+            string? opcion = Console.ReadLine();
 
             switch (opcion)
             {
+
                 case "1":
-                    Console.WriteLine("Has elegido la opción 1.");
-                    // poner el código de la boleta
-                    cliente1.MostrarInformacionCliente();
+                    Console.WriteLine("=================================");
+                    Console.WriteLine("Ingrese datos cliente");
+                    // metodos cliente, set
+                    Console.WriteLine("Ingrese nombre: ");
+                    string? nombre = Console.ReadLine();
+                
+                    cliente1.Nombre = nombre;
+                    
+                    
+                    Console.WriteLine("Ingrese apellido: ");
+                    cliente1.Apellido = Console.ReadLine();
+                    Console.WriteLine("Ingrese rut: ");
+                    cliente1.RUT = Console.ReadLine();
+                    Console.WriteLine("Ingrese correo: ");
+                    cliente1.Correo = Console.ReadLine();
+                    //cliente1.MostrarInformacionCliente();
                     break;
+
                 case "2":
-                    Console.WriteLine("Has elegido la opción 2.");
+                    Console.WriteLine("Generando boleta.");
+                    // poner el código de la boleta
+                    // creara una archivo de salida, utilizar metodos get
+                    
                     break;
                 case "3":
+                    Console.WriteLine("Has elegido la opción 2.");
+                    break;
+                case "4":
                     Console.WriteLine("Has elegido Agregar Película");
                     Console.WriteLine("Ingrese Titulo de la Película:");
-                    string titulo = Console.ReadLine();
+                    string? titulo = Console.ReadLine();
 
                     Console.WriteLine("Ingrese Género de la Película:");
-                    string genero = Console.ReadLine();
+                    string? genero = Console.ReadLine();
                     
                     Console.WriteLine("Ingrese Cantidad de Ejemplares:");
                     int cantidadEjemplares = Convert.ToInt32(Console.ReadLine());
                     
                     Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
                     break;
-                case "4":
+                case "5":
                     Console.WriteLine("Has elegido salir. ¡Hasta luego!");
                     salir = true;
                     break;

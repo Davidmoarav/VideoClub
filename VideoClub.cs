@@ -2,11 +2,11 @@ using System;
 
 namespace VideoClub
 {
-    public class VideoClub
+    public class VIDEOCLUB
     {
         private List<Pelicula> inventario;
 
-        public VideoClub()
+        public VIDEOCLUB()
         {
             inventario = new List<Pelicula>();
         }
