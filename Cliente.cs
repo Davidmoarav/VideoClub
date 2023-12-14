@@ -1,8 +1,7 @@
 using System;
-
 namespace VideoClub
 {
-    public class Cliente
+    class Cliente
     {
         private string? nombre;
         private string? apellido;

@@ -2,7 +2,7 @@ using System;
 
 namespace VideoClub
 {
-    public class Pelicula : Caracteristicas
+    class Pelicula : Caracteristicas
     {
         private string titulo;
         private string genero;

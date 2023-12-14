@@ -1,7 +1,7 @@
 ﻿using System;
 using VideoClub;
 
-public class Program{
+class Program{
     static void Main(string[] args){
         
         Cliente cliente1 = new Cliente();

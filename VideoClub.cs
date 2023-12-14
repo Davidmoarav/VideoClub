@@ -2,7 +2,7 @@ using System;
 
 namespace VideoClub
 {
-    public class VIDEOCLUB
+    class VIDEOCLUB
     {
         private List<Pelicula> inventario;
 
