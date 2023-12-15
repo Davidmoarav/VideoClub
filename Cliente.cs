@@ -19,29 +19,29 @@ namespace VideoClub
 
         
 
-        public string Nombre{
+        public string? Nombre{
             get{return nombre;}
             set{this.nombre = value;}
         } 
 
-        public string Apellido{
+        public string? Apellido{
             get{return apellido;}
             set{this.apellido = value;}
         }
 
-        public string RUT{
+        public string? RUT{
             get{return rut;}
             set{this.rut = value;}
         }
 
-        public string Correo{
+        public string? Correo{
             get{return correo;}
             set{this.correo = value;}
         }
 
         public void MostrarInformacionCliente(){
-            System.Console.WriteLine($"Informacion del Cliente:");
-            System.Console.WriteLine($"Nombre: {Nombre}\nApellido: {Apellido}\nRut: {RUT}\nCorreo: {Correo}");
+            Console.WriteLine($"Informacion del Cliente:");
+            Console.WriteLine($"Nombre: {Nombre}\nApellido: {Apellido}\nRut: {RUT}\nCorreo: {Correo}");
         }
     }
 }

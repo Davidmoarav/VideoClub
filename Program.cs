@@ -6,11 +6,8 @@ class Program{
         
         Cliente cliente1 = new Cliente();
 
-        VIDEOCLUB inventario1 = new VIDEOCLUB();
-        Pelicula peli1 = new Pelicula("sharknado","terror",2);
-
-        inventario1.AgregarPelicula(peli1);
-        inventario1.ObtenerInventario();
+        VIDEOCLUB pedidos = new VIDEOCLUB();
+        Boleta boleta = new Boleta();
 
         bool salir = false;
         while (!salir)
@@ -18,7 +15,7 @@ class Program{
             Console.WriteLine("===== Menú =====");
             Console.WriteLine("1. Datos cliente");
             Console.WriteLine("2. Boleta");
-            Console.WriteLine("3. Peliculas");
+            Console.WriteLine("3. Peliculas seleccionadas");
             Console.WriteLine("4. Agregar Película");
             Console.WriteLine("5. Salir");
             Console.Write("Elige una opción: ");
@@ -44,7 +41,9 @@ class Program{
                     cliente1.RUT = Console.ReadLine();
                     Console.WriteLine("Ingrese correo: ");
                     cliente1.Correo = Console.ReadLine();
-                    //cliente1.MostrarInformacionCliente();
+
+                    
+
                     break;
 
                 case "2":
@@ -52,9 +51,14 @@ class Program{
                     // poner el código de la boleta
                     // creara una archivo de salida, utilizar metodos get
                     
+                    boleta.MostrarDetalles();
+
                     break;
                 case "3":
-                    Console.WriteLine("Has elegido la opción 2.");
+                    Console.WriteLine("=========================");
+                    Console.WriteLine("Peliculas seleccionadas:\n");
+                    
+                    pedidos.MostrarPeliculas();
                     break;
                 case "4":
                     Console.WriteLine("Has elegido Agregar Película");
@@ -68,6 +72,12 @@ class Program{
                     int cantidadEjemplares = Convert.ToInt32(Console.ReadLine());
                     
                     Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
+                    
+
+                    pedidos.AgregarPelicula(peli);
+
+                    
+                    
                     break;
                 case "5":
                     Console.WriteLine("Has elegido salir. ¡Hasta luego!");

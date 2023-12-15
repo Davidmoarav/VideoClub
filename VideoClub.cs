@@ -4,18 +4,27 @@ namespace VideoClub
 {
     class VIDEOCLUB
     {
-        private List<Pelicula> inventario;
-
+        private List<Pelicula> pedido;
+        private List<Inventario> inventario;
         public VIDEOCLUB()
         {
-            inventario = new List<Pelicula>();
+            inventario = new List<Inventario>();
+            pedido = new List<Pelicula>();
         }
 
         public void AgregarPelicula(Pelicula pelicula)
         {
-            inventario.Add(pelicula);
+            pedido.Add(pelicula);
+        }
+        public void MostrarPeliculas()
+        {
+            foreach (Pelicula pelicula in pedido)
+            {
+                pelicula.MostrarDetalles();
+            }
         }
 
+        /*
         public void ModificarPelicula(Pelicula pelicula)
         {
             int index = inventario.FindIndex(p => p.Titulo == pelicula.Titulo);
@@ -39,7 +48,7 @@ namespace VideoClub
             return inventario;
         }
 
-        /*
+        
         public void GenerarBoleta(Arriendo arriendo)
         {
             // Imprime los datos del arriendo

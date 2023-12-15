@@ -6,6 +6,8 @@ namespace VideoClub{
         // su principal funcion sera la de verificar si existe la pelicula en el archivo
         // ademas de moficar la cantidad de peliculas.
 
-        
+        Inventario(){
+            
+        }
     }
 }
