@@ -11,39 +11,14 @@ namespace VideoClub{
         private string? genero;
         private int cantidadEjemplares;
 
-        private List<Pelicula> peliculas;
+        private List<Pelicula>? peliculas;
         // constructor
         public Inventario(){
             peliculas = new List<Pelicula>();
         }
-
-        public Inventario(string titulo, string genero, int cantidadejemplares){
-            this.titulo = titulo;
-            this.genero = genero;
-            this.cantidadEjemplares = cantidadejemplares;
-        }
-
+        
         // metodos
-        public string? Titulo
-        {
-            get { return titulo; }
-            set { titulo = value; }
-        }
-
-        public string? Genero
-        {
-            get { return genero; }
-            set { genero = value; }
-        }
-
-        public int CantidadEjemplares
-        {
-            get { return cantidadEjemplares; }
-            set { cantidadEjemplares = value; }
-        }
-
-        public List<Inventario> LeerArchivo(string rutaArchivo){
-            List<Inventario> productos = new List<Inventario>();
+        public void LeerArchivo(string rutaArchivo){
 
             try
             {
@@ -53,10 +28,7 @@ namespace VideoClub{
                         string[] datos = sr.ReadLine().Split(',');
                         if (datos.Length == 3)
                         {
-                            /*
-                            Inventario inv = new Inventario(datos[0],datos[1],Convert.ToInt32(datos[2]));
-                            productos.Add(inv);
-                            */
+                            
                             Pelicula pelicula = new Pelicula(datos[0], datos[1], Convert.ToInt32(datos[2]));
                             peliculas.Add(pelicula);
                         }
@@ -70,10 +42,6 @@ namespace VideoClub{
             } finally {
                 // Cerrar el archivo en cualquier caso
             }
-
-            return productos;
-            
-
         }
 
         public void MostrarInventario()
