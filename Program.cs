@@ -4,11 +4,17 @@ using VideoClub;
 class Program{
     static void Main(string[] args){
         
+        //Inventario archivo = new Inventario();
+        
+        //archivo.LeerArchivo("peliculas.txt");
+        //archivo.MostrarInventario();
+
+
         Cliente cliente1 = new Cliente();
 
         VIDEOCLUB pedidos = new VIDEOCLUB();
         Boleta boleta = new Boleta();
-
+        
         bool salir = false;
         while (!salir)
         {
@@ -88,6 +94,6 @@ class Program{
                     break;
             }
         }
-
+        
     }
 }

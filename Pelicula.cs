@@ -9,17 +9,17 @@ namespace VideoClub
         private int cantidadEjemplares;
         private int cantidadVecesArrendada;
 
-        private List<Pelicula>? pedido;
+        
 
         public Pelicula() : base(){
-            pedido = new List<Pelicula>();
+            
         }
         public Pelicula(string titulo, string genero, int cantidadEjemplares) : base()
         {
             this.titulo = titulo;
             this.genero = genero;
             this.cantidadEjemplares = cantidadEjemplares;
-            pedido = new List<Pelicula>();
+            
         }
 
         public string? Titulo
