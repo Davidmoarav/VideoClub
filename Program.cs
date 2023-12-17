@@ -58,7 +58,7 @@ class Program{
                     // creara una archivo de salida, utilizar metodos get
                     
                     boleta.MostrarDetalles();
-
+                    cliente1.MostrarInformacionCliente();
                     break;
                 case "3":
                     Console.WriteLine("=========================");

@@ -1,15 +1,11 @@
 using System;
+using utilidades;
 
 namespace VideoClub{
     class Inventario{
         // esta clase leera las peliculas del archivo, ademas de incluir sobrecarga de operadores + y uno booleano
         // su principal funcion sera la de verificar si existe la pelicula en el archivo
         // ademas de moficar la cantidad de peliculas.
-
-        // atributos
-        private string? titulo;
-        private string? genero;
-        private int cantidadEjemplares;
 
         private List<Pelicula>? peliculas;
         // constructor
@@ -72,7 +68,7 @@ namespace VideoClub{
                     break;
                 }
             }       
-            // Si la película existe y hay ejemplares disponibles, disminuye la cantidad
+            // Si la película existe y hay ejemplares disponibles, disminuye la cantidad en 1
             if (peli != null && peli.CantidadEjemplares > 0)
             {
                 peli.CantidadEjemplares--;
