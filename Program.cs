@@ -78,10 +78,11 @@ class Program{
                     int cantidadEjemplares = Convert.ToInt32(Console.ReadLine());
                     
                     Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
-                    archivo.ActualizarInventario(peli);
+                    
 
                     pedidos.AgregarPelicula(peli);
-    
+                    archivo.ActualizarInventario(peli);
+                    
                     break;
 
 
