@@ -1,4 +1,6 @@
 using System;
+using utilidades;
+
 
 namespace VideoClub{
     class Boleta : Caracteristicas {

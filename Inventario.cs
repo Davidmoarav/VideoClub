@@ -59,6 +59,32 @@ namespace VideoClub{
             }
         }
 
+        // solo se puede pedir una pelicula
+        public bool ActualizarInventario(Pelicula pelicula)
+        {
+            // Busca la película por su título
+            Pelicula peli = null;
+            foreach (Pelicula p in peliculas)
+            {
+                if (p.Titulo == pelicula.Titulo)
+                {
+                    peli = p;
+                    break;
+                }
+            }       
+            // Si la película existe y hay ejemplares disponibles, disminuye la cantidad
+            if (peli != null && peli.CantidadEjemplares > 0)
+            {
+                peli.CantidadEjemplares--;
+                Console.WriteLine("Película agregada al pedido. Cantidad de ejemplares actualizada.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("No se encontró la película o no hay ejemplares disponibles.");
+                return false;
+            }
+        }
 
     }
 }

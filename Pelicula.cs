@@ -1,4 +1,7 @@
 using System;
+using System.Net.NetworkInformation;
+using utilidades;
+
 
 namespace VideoClub
 {
@@ -20,6 +23,11 @@ namespace VideoClub
             this.genero = genero;
             this.cantidadEjemplares = cantidadEjemplares;
             
+        }
+
+        public Pelicula(string titulo) : base ()
+        {
+            this.Titulo = titulo;
         }
 
         public string? Titulo

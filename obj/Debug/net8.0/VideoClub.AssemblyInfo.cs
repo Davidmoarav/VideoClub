@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VideoClub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47f6f49193e3ba5c589c8d5bd4e3ebdea60e6069")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaf3936b9171deb9b3a46b188790970bddb403cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("VideoClub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VideoClub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

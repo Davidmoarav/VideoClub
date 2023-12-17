@@ -4,11 +4,9 @@ using VideoClub;
 class Program{
     static void Main(string[] args){
         
-        //Inventario archivo = new Inventario();
+        Inventario archivo = new Inventario();
+        archivo.LeerArchivo("archivos/peliculas.txt");
         
-        //archivo.LeerArchivo("peliculas.txt");
-        //archivo.MostrarInventario();
-
 
         Cliente cliente1 = new Cliente();
 
@@ -22,8 +20,10 @@ class Program{
             Console.WriteLine("1. Datos cliente");
             Console.WriteLine("2. Boleta");
             Console.WriteLine("3. Peliculas seleccionadas");
-            Console.WriteLine("4. Agregar Película");
-            Console.WriteLine("5. Salir");
+            Console.WriteLine("4. Agregar película");
+            Console.WriteLine("5. Quitar película");
+            Console.WriteLine("6. Inventario");
+            Console.WriteLine("7. Salir");
             Console.Write("Elige una opción: ");
 
             string? opcion = Console.ReadLine();
@@ -78,14 +78,35 @@ class Program{
                     int cantidadEjemplares = Convert.ToInt32(Console.ReadLine());
                     
                     Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
-                    
+                    archivo.ActualizarInventario(peli);
 
                     pedidos.AgregarPelicula(peli);
-
-                    
-                    
+    
                     break;
+
+
                 case "5":
+                    Console.WriteLine("=========================");
+                    Console.WriteLine("Ingrese titulo de la pelicula a quitar:");
+                    //string? peliQuitar= Console.ReadLine();
+                    //Pelicula quitar = new Pelicula(peliQuitar);
+
+                    Console.WriteLine("Ingrese titulo de la pelicula a quitar:");
+                    string? peliQuitar = Console.ReadLine();
+                    Pelicula quitar = new Pelicula(peliQuitar);
+    
+                    // Aquí usas el operador - para quitar la película
+                    pedidos = pedidos - quitar;
+
+                    break;
+
+                case "6":
+                    Console.WriteLine("=========================");
+                    archivo.MostrarInventario();
+
+                    break;
+                
+                case "7":
                     Console.WriteLine("Has elegido salir. ¡Hasta luego!");
                     salir = true;
                     break;

@@ -5,10 +5,8 @@ namespace VideoClub
     class VIDEOCLUB
     {
         private List<Pelicula> pedido;
-        private List<Inventario> inventario;
         public VIDEOCLUB()
         {
-            inventario = new List<Inventario>();
             pedido = new List<Pelicula>();
         }
 
@@ -23,5 +21,35 @@ namespace VideoClub
                 pelicula.MostrarDetalles();
             }
         }
+
+         // Sobrecarga del operador -
+        public static VIDEOCLUB operator -(VIDEOCLUB videoclub, Pelicula pelicula)
+        {
+        
+        // Busca la película por su título
+            Pelicula peli = null;
+            foreach (Pelicula p in videoclub.pedido)
+            {
+                if (p.Titulo == pelicula.Titulo)
+                {
+                    peli = p;
+                    break;
+                }
+            }
+
+        // Si la película existe, la elimina
+            if (peli != null)
+            {
+                videoclub.pedido.Remove(peli);
+                Console.WriteLine("Película eliminada exitosamente.");
+            }
+            else
+            {
+                Console.WriteLine("No se encontró la película.");
+            }
+
+            return videoclub;
+        }
+
     }
 }
