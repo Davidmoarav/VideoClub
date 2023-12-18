@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using VideoClub;
 
 class Program{
@@ -62,12 +63,13 @@ class Program{
                     cliente1.MostrarInformacionCliente();
                     break;
                 case "3":
-                    Console.WriteLine("=========================");
+                    
                     Console.WriteLine("Peliculas seleccionadas:\n");
                     
                     pedidos.MostrarPeliculas();
                     break;
                 case "4":
+                    Console.WriteLine("=========================");
                     Console.WriteLine("Has elegido Agregar 1 Película");
                     Console.WriteLine("Ingrese Titulo de la Película:");
                     string? titulo = Console.ReadLine();
@@ -80,28 +82,60 @@ class Program{
                     
                     Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
 
-                    pedidos.AgregarPelicula(peli);
-                    archivo.ActualizarInventario(peli);
+                    if (archivo.ActualizarInventario(peli) == false){
+                        Console.WriteLine("La Cantidad maxima de ejemplares es 1");
+                    }
+                    else{
+                        pedidos.AgregarPelicula(peli);
+                        archivo.ActualizarInventario(peli);
+                    }
+                    
 
                     break;
 
 
                 case "5":
+                    try
+                    {
+                        Console.WriteLine("Has elegido Agregar 2 Películas");
 
-                    Console.WriteLine("Has elegido Agregar 2 Película");
-                    
-                    Console.WriteLine("Ingrese Titulo de la Película:");
-                    string? titulo2 = Console.ReadLine();
+                        Console.WriteLine("Ingrese Titulo de la Película:");
+                        string? titulo1 = Console.ReadLine();
 
-                    Console.WriteLine("Ingrese Género de la Película:");
-                    string? genero2 = Console.ReadLine();
-                    
-                    Console.WriteLine("Ingrese Cantidad de Ejemplares:");
-                    int cantidadEjemplares2 = Convert.ToInt32(Console.ReadLine());
-                    Pelicula peli2 = new Pelicula(titulo2, genero2, cantidadEjemplares2);
-                    pedidos.AgregarPelicula(peli2);
-                    archivo.ActualizarInventario(peli2);
-                    
+
+                        Console.WriteLine("Ingrese Género de la Película:");
+                        string? genero1 = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Cantidad de Ejemplares:");
+                        int cantidadEjemplares1 = Convert.ToInt32(Console.ReadLine());
+
+                        Pelicula peli1 = new Pelicula(titulo1, genero1, cantidadEjemplares1);
+
+                        
+                        Console.WriteLine("Ingrese Titulo de la Película:");
+                        string? titulo2 = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Género de la Película:");
+                        string? genero2 = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Cantidad de Ejemplares:");
+                        int cantidadEjemplares2 = Convert.ToInt32(Console.ReadLine());
+
+                        Pelicula peli2 = new Pelicula(titulo2, genero2, cantidadEjemplares2);
+
+                        if (archivo.ActualizarInventario(peli1) == false || archivo.ActualizarInventario(peli2) == false){
+                            Console.WriteLine("La Cantidad maxima de ejemplares es 1");
+                        }
+                        else{
+                            pedidos.AgregarPelicula(peli2, peli1);
+                            archivo.ActualizarInventario(peli1);
+                            archivo.ActualizarInventario(peli2);
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Error: Ingrese un número válido para la cantidad de ejemplares.");
+                    }
                     break;
 
                 case "6":

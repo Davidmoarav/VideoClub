@@ -3,7 +3,7 @@ using utilidades;
 
 namespace VideoClub{
     class Inventario{
-        // esta clase leera las peliculas del archivo, ademas de incluir sobrecarga de operadores + y uno booleano
+        
         // su principal funcion sera la de verificar si existe la pelicula en el archivo
         // ademas de moficar la cantidad de peliculas.
 
@@ -69,7 +69,7 @@ namespace VideoClub{
                 }
             }       
             // Si la película existe y hay ejemplares disponibles, disminuye la cantidad en 1
-            if (peli != null && peli.CantidadEjemplares > 0)
+            if (peli != null && peli.CantidadEjemplares > 0 && peli.CantidadEjemplares == 1)
             {
                 peli.CantidadEjemplares--;
                 Console.WriteLine("Cantidad de ejemplares actualizada.");
@@ -77,7 +77,7 @@ namespace VideoClub{
             }
             else
             {
-                Console.WriteLine("No hay ejemplares disponibles.");
+                Console.WriteLine("No hay ejemplares disponibles o cantidad pasa de 1");
                 return false;
             }
         }
