@@ -13,6 +13,12 @@ namespace VideoClub
         public Pelicula() : base(){
             
         }
+
+        public Pelicula(string titulo, int cantidadEjemplares) : base(){
+            this.titulo = titulo;
+            this.cantidadEjemplares = cantidadEjemplares;
+        }
+
         public Pelicula(string titulo, string genero, int cantidadEjemplares) : base()
         {
             this.titulo = titulo;
@@ -44,8 +50,12 @@ namespace VideoClub
             set { cantidadEjemplares = value; }
         }
 
-        public override void MostrarDetalles(){
-            //Console.WriteLine("Detalles de la Pelicula");
+        public override string MostrarDetalles(){
+            return $"Titulo: {Titulo} Genero:{Genero} Cantidad de ejemplares: {CantidadEjemplares}";
+        }
+
+        public override void MostrarDetallesVoid()
+        {
             Console.WriteLine($"Titulo: {Titulo} Genero:{Genero} Cantidad de ejemplares: {CantidadEjemplares}");
         }
     }

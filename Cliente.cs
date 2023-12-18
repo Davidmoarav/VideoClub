@@ -7,9 +7,8 @@ namespace VideoClub
         public Cliente() : base() {
         }
 
-        public void MostrarInformacionCliente(){
-            Console.WriteLine($"Informacion del Cliente:");
-            Console.WriteLine($"Nombre: {Nombre}\nApellido: {Apellido}\nRut: {RUT}\nCorreo: {Correo}");
+        public string MostrarInformacionCliente(){
+            return $"Informacion del Cliente\nNombre: {Nombre}\nApellido: {Apellido}\nRut: {RUT}\nCorreo: {Correo}\nForma de pago: {FormadePago} ";
         }
     }
 }

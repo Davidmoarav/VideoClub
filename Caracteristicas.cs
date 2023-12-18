@@ -6,8 +6,12 @@ namespace utilidades{
 
     abstract class Caracteristicas{
     // metodos para la clase pelicula
-    public abstract void MostrarDetalles();
+    public abstract string MostrarDetalles();
+    public abstract void MostrarDetallesVoid();
+
     }
+
+    
 
 
     class Detalles{
@@ -15,7 +19,7 @@ namespace utilidades{
         private string? apellido;
         private string? rut;
         private string? correo;
-
+        private string? formadePago;
         public Detalles(){
     
         }
@@ -37,6 +41,11 @@ namespace utilidades{
 
         public string? Correo{
             get{return correo;}
+            set{this.correo = value;}
+        }
+
+        public string? FormadePago{
+            get{return formadePago;}
             set{this.correo = value;}
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using utilidades;
 
 
@@ -24,12 +25,19 @@ namespace VideoClub{
             videos = new VIDEOCLUB();
         }
 
-        public override void MostrarDetalles()
+        public override string MostrarDetalles()
         {
-            Console.WriteLine($"{nombreTienda}\n {direccion}\n {correoTienda}\n {numero}\n {website}\n");
+            //Console.WriteLine($"{nombreTienda}\n{direccion}\n{correoTienda}\n{numero}\n{website}\n");
+            
             videos.MostrarPeliculas();
+            return $"{nombreTienda}\n{direccion}\n{correoTienda}\n{numero}\n{website}\n";
         }
 
+        public override void MostrarDetallesVoid()
+        {
+            //throw new NotImplementedException();
+
+        }
 
 
     }

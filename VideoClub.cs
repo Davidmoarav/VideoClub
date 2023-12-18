@@ -26,20 +26,28 @@ namespace VideoClub
             
         }
 
+        public void MostrarPeliculas1(StreamWriter sw){
+            foreach (Pelicula pelicula in pedido)
+            {
+                sw.WriteLine(pelicula.MostrarDetalles());
+            }
+        }
+
         public void MostrarPeliculas()
         {
             foreach (Pelicula pelicula in pedido)
             {
-                pelicula.MostrarDetalles();
+                pelicula.MostrarDetallesVoid();
             }
         }
+
 
          // Sobrecarga del operador -
         public static VIDEOCLUB operator -(VIDEOCLUB videoclub, Pelicula pelicula)
         {
         
         // Busca la película por su título
-            Pelicula peli = null;
+            Pelicula peli = null!;
             foreach (Pelicula p in videoclub.pedido)
             {
                 if (p.Titulo == pelicula.Titulo)
@@ -63,7 +71,23 @@ namespace VideoClub
             return videoclub;
         }
 
-        
+        public string PrecioTotal(){
+            int valorPelicula = 5000;
+            double iva = 0.19;
+            int total = 0;
+
+            foreach (Pelicula pelicula in pedido)
+            {
+                total += pelicula.CantidadEjemplares * valorPelicula;
+            }
+
+            double totalIVA = total * iva;
+
+
+            //Console.WriteLine("Total" + total);
+            //Console.WriteLine("El valor del IVA es: " + totalIVA);
+            return "Total: " + total + "\nIVA: " + totalIVA;
+        }
 
     }
 }

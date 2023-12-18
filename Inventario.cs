@@ -21,7 +21,7 @@ namespace VideoClub{
                 using (StreamReader sr = new StreamReader(rutaArchivo)){
                    
                     while (!sr.EndOfStream){
-                        string[] datos = sr.ReadLine().Split(',');
+                        string[] datos = sr.ReadLine()!.ToUpper().Split(',');
                         if (datos.Length == 3)
                         {
                             
@@ -50,7 +50,7 @@ namespace VideoClub{
             {
                 foreach (Pelicula pelicula in peliculas)
                 {
-                    pelicula.MostrarDetalles();
+                    pelicula.MostrarDetallesVoid();
                 }
             }
         }
@@ -59,7 +59,7 @@ namespace VideoClub{
         public bool ActualizarInventario(Pelicula pelicula)
         {
             // Busca la película por su título
-            Pelicula peli = null;
+            Pelicula peli = null!;
             foreach (Pelicula p in peliculas)
             {
                 if (p.Titulo == pelicula.Titulo)
@@ -69,7 +69,7 @@ namespace VideoClub{
                 }
             }       
             // Si la película existe y hay ejemplares disponibles, disminuye la cantidad en 1
-            if (peli != null && peli.CantidadEjemplares > 0 && peli.CantidadEjemplares == 1)
+            if (peli != null && peli.CantidadEjemplares > 0)
             {
                 peli.CantidadEjemplares--;
                 Console.WriteLine("Cantidad de ejemplares actualizada.");
@@ -77,7 +77,7 @@ namespace VideoClub{
             }
             else
             {
-                Console.WriteLine("No hay ejemplares disponibles o cantidad pasa de 1");
+                Console.WriteLine("No hay ejemplares disponibles");
                 return false;
             }
         }

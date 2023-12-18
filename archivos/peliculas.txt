@@ -1,5 +1,5 @@
-El Padrino, Drama, 5, 120
-Titanic, Romance/Drama, 4, 200
+El Padrino, Drama, 5
+Titanic, Romance/Drama, 4
 Toy Story, Animación/Comedia, 6
 Matrix, Ciencia Ficción, 3
-Parásito, Drama/Thriller, 2
+Parásito, Drama/Thriller, 3
