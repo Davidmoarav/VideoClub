@@ -89,19 +89,7 @@ class Program{
                 case "5":
 
                     Console.WriteLine("Has elegido Agregar 2 Película");
-                    Console.WriteLine("Ingrese Titulo de la Película:");
-                    string? titulo1 = Console.ReadLine();
-
-                    Console.WriteLine("Ingrese Género de la Película:");
-                    string? genero1 = Console.ReadLine();
                     
-                    Console.WriteLine("Ingrese Cantidad de Ejemplares:");
-                    int cantidadEjemplares1 = Convert.ToInt32(Console.ReadLine());
-                    
-                    Pelicula peli1 = new Pelicula(titulo1, genero1, cantidadEjemplares1);
-                    pedidos.AgregarPelicula(peli1);
-                    archivo.ActualizarInventario(peli1);
-
                     Console.WriteLine("Ingrese Titulo de la Película:");
                     string? titulo2 = Console.ReadLine();
 
