@@ -10,10 +10,6 @@ namespace VideoClub
         private string? titulo;
         private string? genero;
         private int cantidadEjemplares;
-        private int cantidadVecesArrendada;
-
-        
-
         public Pelicula() : base(){
             
         }
@@ -46,12 +42,6 @@ namespace VideoClub
         {
             get { return cantidadEjemplares; }
             set { cantidadEjemplares = value; }
-        }
-
-        public int CantidadVecesArrendada
-        {
-            get { return cantidadVecesArrendada; }
-            set { cantidadVecesArrendada = value; }
         }
 
         public override void MostrarDetalles(){

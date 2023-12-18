@@ -14,6 +14,18 @@ namespace VideoClub
         {
             pedido.Add(pelicula);
         }
+
+        public void AgregarPelicula(Pelicula peli1,Pelicula peli2){
+            if (peli1.Titulo == peli2.Titulo){
+                Console.WriteLine("Ingrese peliculas distintas");
+            }
+            else{
+                pedido.Add(peli1);
+                pedido.Add(peli2);
+            }
+            
+        }
+
         public void MostrarPeliculas()
         {
             foreach (Pelicula pelicula in pedido)

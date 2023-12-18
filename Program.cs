@@ -20,10 +20,11 @@ class Program{
             Console.WriteLine("1. Datos cliente");
             Console.WriteLine("2. Boleta");
             Console.WriteLine("3. Peliculas seleccionadas");
-            Console.WriteLine("4. Agregar película");
-            Console.WriteLine("5. Quitar película");
-            Console.WriteLine("6. Inventario");
-            Console.WriteLine("7. Salir");
+            Console.WriteLine("4. Agregar 1 película");
+            Console.WriteLine("5. Agregar 2 peliculas");// sobrecarga de metodo
+            Console.WriteLine("6. Quitar película");// sobre carga de operador
+            Console.WriteLine("7. Inventario");
+            Console.WriteLine("8. Salir");
             Console.Write("Elige una opción: ");
 
             string? opcion = Console.ReadLine();
@@ -67,7 +68,7 @@ class Program{
                     pedidos.MostrarPeliculas();
                     break;
                 case "4":
-                    Console.WriteLine("Has elegido Agregar Película");
+                    Console.WriteLine("Has elegido Agregar 1 Película");
                     Console.WriteLine("Ingrese Titulo de la Película:");
                     string? titulo = Console.ReadLine();
 
@@ -78,15 +79,44 @@ class Program{
                     int cantidadEjemplares = Convert.ToInt32(Console.ReadLine());
                     
                     Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
-                    
 
                     pedidos.AgregarPelicula(peli);
                     archivo.ActualizarInventario(peli);
-                    
+
                     break;
 
 
                 case "5":
+
+                    Console.WriteLine("Has elegido Agregar 2 Película");
+                    Console.WriteLine("Ingrese Titulo de la Película:");
+                    string? titulo1 = Console.ReadLine();
+
+                    Console.WriteLine("Ingrese Género de la Película:");
+                    string? genero1 = Console.ReadLine();
+                    
+                    Console.WriteLine("Ingrese Cantidad de Ejemplares:");
+                    int cantidadEjemplares1 = Convert.ToInt32(Console.ReadLine());
+                    
+                    Pelicula peli1 = new Pelicula(titulo1, genero1, cantidadEjemplares1);
+                    pedidos.AgregarPelicula(peli1);
+                    archivo.ActualizarInventario(peli1);
+
+                    Console.WriteLine("Ingrese Titulo de la Película:");
+                    string? titulo2 = Console.ReadLine();
+
+                    Console.WriteLine("Ingrese Género de la Película:");
+                    string? genero2 = Console.ReadLine();
+                    
+                    Console.WriteLine("Ingrese Cantidad de Ejemplares:");
+                    int cantidadEjemplares2 = Convert.ToInt32(Console.ReadLine());
+                    Pelicula peli2 = new Pelicula(titulo2, genero2, cantidadEjemplares2);
+                    pedidos.AgregarPelicula(peli2);
+                    archivo.ActualizarInventario(peli2);
+                    
+                    break;
+
+                case "6":
                     Console.WriteLine("=========================");
                     Console.WriteLine("Ingrese titulo de la pelicula a quitar:");
                     //string? peliQuitar= Console.ReadLine();
@@ -96,18 +126,18 @@ class Program{
                     string? peliQuitar = Console.ReadLine();
                     Pelicula quitar = new Pelicula(peliQuitar);
     
-                    // Aquí usas el operador - para quitar la película
+                    // Aquí el operador - para quitar la película
                     pedidos = pedidos - quitar;
 
                     break;
 
-                case "6":
+                case "7":
                     Console.WriteLine("=========================");
                     archivo.MostrarInventario();
 
                     break;
                 
-                case "7":
+                case "8":
                     Console.WriteLine("Has elegido salir. ¡Hasta luego!");
                     salir = true;
                     break;

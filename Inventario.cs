@@ -7,7 +7,7 @@ namespace VideoClub{
         // su principal funcion sera la de verificar si existe la pelicula en el archivo
         // ademas de moficar la cantidad de peliculas.
 
-        private List<Pelicula>? peliculas;
+        private List<Pelicula> peliculas;
         // constructor
         public Inventario(){
             peliculas = new List<Pelicula>();
@@ -72,12 +72,12 @@ namespace VideoClub{
             if (peli != null && peli.CantidadEjemplares > 0)
             {
                 peli.CantidadEjemplares--;
-                Console.WriteLine("Película agregada al pedido. Cantidad de ejemplares actualizada.");
+                Console.WriteLine("Cantidad de ejemplares actualizada.");
                 return true;
             }
             else
             {
-                Console.WriteLine("No se encontró la película o no hay ejemplares disponibles.");
+                Console.WriteLine("No hay ejemplares disponibles.");
                 return false;
             }
         }
