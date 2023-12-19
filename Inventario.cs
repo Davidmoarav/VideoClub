@@ -68,7 +68,7 @@ namespace VideoClub{
                     break;
                 }
             }       
-            // Si la película existe y hay ejemplares disponibles, disminuye la cantidad en 1
+            // Si la película existe y hay ejemplares disponibles, disminuye la cantidad en
             if (peli != null && peli.CantidadEjemplares > 0)
             {
                 peli.CantidadEjemplares -= pelicula.CantidadEjemplares;
@@ -79,6 +79,31 @@ namespace VideoClub{
             {
                 Console.WriteLine("No hay ejemplares disponibles");
                 return false;
+            }
+        }
+
+        public void AgregarEjemplares(Pelicula pelicula)
+        {
+            // Busca la película por su título
+            Pelicula peli = null!;
+            foreach (Pelicula p in peliculas)
+            {
+                if (p.Titulo == pelicula.Titulo)
+                {
+                    peli = p;
+                    break;
+                }
+            }
+
+    // Si la película existe, incrementa la cantidad de ejemplares
+            if (peli != null)
+            {
+                peli.CantidadEjemplares += pelicula.CantidadEjemplares;
+                Console.WriteLine("Cantidad de ejemplares actualizada.");
+            }
+            else
+            {
+                Console.WriteLine("No se encontró la película.");
             }
         }
 

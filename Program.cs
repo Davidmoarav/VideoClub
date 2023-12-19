@@ -151,10 +151,19 @@ class Program{
                     Console.WriteLine("=========================");
                     Console.WriteLine("Ingrese titulo de la pelicula a quitar:");
                     string? peliQuitar = Console.ReadLine()!.ToUpper();
-                    Pelicula quitar = new Pelicula(peliQuitar);
+                    Console.WriteLine("Ingrese los ejemplares pedidos");
+                    int cantidadejem = Convert.ToInt32(Console.ReadLine());
+                    if (cantidadejem < 3 || cantidadejem > 0){
+                        Pelicula quitar = new Pelicula(peliQuitar,cantidadejem);
     
-                    // Aquí el operador - para quitar la película
-                    pedidos = pedidos - quitar;
+                        // Aquí el operador - para quitar la película
+                        pedidos = pedidos - quitar;
+                        archivo.AgregarEjemplares(quitar);
+                    }else{
+                        Console.WriteLine("maximo de ejemplares 2");
+                    }
+                
+                    
 
                     break;
 

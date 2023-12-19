@@ -60,6 +60,7 @@ namespace VideoClub
         // Si la película existe, la elimina
             if (peli != null)
             {
+                
                 videoclub.pedido.Remove(peli);
                 Console.WriteLine("Película eliminada exitosamente.");
 
