@@ -53,20 +53,26 @@ class Program{
                 case "2":
                     Console.WriteLine("=========================");
                     Console.WriteLine("Generando boleta.");
-                    using (StreamWriter sw = new StreamWriter("archivos/boleta.txt"))
-                    {
+                    try{
+                        using (StreamWriter sw = new StreamWriter("archivos/boleta.txt"))
+                        {
                         
 
-                        //sw.WriteLine("Detalles de la boleta:");
-                        sw.WriteLine(boleta.MostrarDetalles());
+                            //sw.WriteLine("Detalles de la boleta:");
+                            sw.WriteLine(boleta.MostrarDetalles());
 
-                        sw.WriteLine(cliente1.MostrarInformacionCliente());
+                            sw.WriteLine(cliente1.MostrarInformacionCliente());
 
-                        pedidos.MostrarPeliculas1(sw);
+                            pedidos.MostrarPeliculas1(sw);
 
-                        sw.WriteLine(pedidos.PrecioTotal());
+                            sw.WriteLine(pedidos.PrecioTotal());
                       
-                        sw.WriteLine("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+                            sw.WriteLine("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+                        }
+                    }catch (FileNotFoundException){
+                        Console.WriteLine("El archivo no se encontró");
+                    }finally{
+
                     }
                     Console.WriteLine("Boleta generada exitosamente.");
 
