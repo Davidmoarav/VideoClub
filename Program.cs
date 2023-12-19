@@ -94,23 +94,17 @@ class Program{
                     
                         Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
                         
-                        if (peli.CantidadEjemplares  <= 0 || peli.CantidadEjemplares > 3){
-                            Console.WriteLine("La Cantidad maxima de ejemplares es 2");
+                        if (peli.CantidadEjemplares  <= 0 || peli.CantidadEjemplares >= 3 || archivo.ActualizarInventario(peli) == false){
+                            Console.WriteLine("La Cantidad maxima de ejemplares es 2 o sin existencias");
                         }
                         else{
                             pedidos.AgregarPelicula(peli);
-                            archivo.ActualizarInventario(peli);
                         }
                         
                     }catch (FormatException){
                         Console.WriteLine("Error: Ingrese un número válido para la cantidad de ejemplares.");
                     }
-                    
-                    
-
                     break;
-
-
                 case "5":
                     try
                     {
@@ -131,14 +125,16 @@ class Program{
                         Console.WriteLine("Ingrese Cantidad de Ejemplares:");
                         int cantidadEjemplares2 = Convert.ToInt32(Console.ReadLine());
                         Pelicula peli2 = new Pelicula(titulo2, genero2, cantidadEjemplares2);
-                        if (peli1.CantidadEjemplares > 3 || peli2.CantidadEjemplares > 3 || peli1.Titulo == peli2.Titulo
+                        if (peli1.CantidadEjemplares >= 3 || peli2.CantidadEjemplares >= 3 || peli1.Titulo == peli2.Titulo
                         || peli1.CantidadEjemplares <=0 || peli2.CantidadEjemplares <=0){
                             Console.WriteLine("La Cantidad maxima de ejemplares es 2 o se ingreso dos peliculas con el mismo titulo");
                         }
-                        else{
+                        else if (archivo.ActualizarInventario(peli1) == false || archivo.ActualizarInventario(peli2) == false){
+                            Console.WriteLine("Sin existencias");
+                            
+                        }else{
+                            //Console.WriteLine("Sin existencias de uno solicitado");
                             pedidos.AgregarPelicula(peli2, peli1);
-                            archivo.ActualizarInventario(peli1);
-                            archivo.ActualizarInventario(peli2);
                         }
                     }
                     catch (FormatException)
@@ -153,7 +149,7 @@ class Program{
                     string? peliQuitar = Console.ReadLine()!.ToUpper();
                     Console.WriteLine("Ingrese los ejemplares pedidos");
                     int cantidadejem = Convert.ToInt32(Console.ReadLine());
-                    if (cantidadejem < 3 || cantidadejem > 0){
+                    if (cantidadejem < 3 && cantidadejem > 0){
                         Pelicula quitar = new Pelicula(peliQuitar,cantidadejem);
     
                         // Aquí el operador - para quitar la película
