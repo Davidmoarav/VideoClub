@@ -71,7 +71,7 @@ namespace VideoClub{
             // Si la película existe y hay ejemplares disponibles, disminuye la cantidad en 1
             if (peli != null && peli.CantidadEjemplares > 0)
             {
-                peli.CantidadEjemplares--;
+                peli.CantidadEjemplares -= pelicula.CantidadEjemplares;
                 Console.WriteLine("Cantidad de ejemplares actualizada.");
                 return true;
             }

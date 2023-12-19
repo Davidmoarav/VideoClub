@@ -94,8 +94,8 @@ class Program{
                     
                         Pelicula peli = new Pelicula(titulo, genero, cantidadEjemplares);
                         
-                        if (peli.CantidadEjemplares > 2){
-                            Console.WriteLine("La Cantidad maxima de ejemplares es 1");
+                        if (peli.CantidadEjemplares  <= 0 || peli.CantidadEjemplares > 3){
+                            Console.WriteLine("La Cantidad maxima de ejemplares es 2");
                         }
                         else{
                             pedidos.AgregarPelicula(peli);
@@ -131,8 +131,9 @@ class Program{
                         Console.WriteLine("Ingrese Cantidad de Ejemplares:");
                         int cantidadEjemplares2 = Convert.ToInt32(Console.ReadLine());
                         Pelicula peli2 = new Pelicula(titulo2, genero2, cantidadEjemplares2);
-                        if (peli1.CantidadEjemplares >2 || peli2.CantidadEjemplares >2 || peli1.Titulo == peli2.Titulo){
-                            Console.WriteLine("La Cantidad maxima de ejemplares es 1 o se ingreso dos peliculas con el mismo titulo");
+                        if (peli1.CantidadEjemplares > 3 || peli2.CantidadEjemplares > 3 || peli1.Titulo == peli2.Titulo
+                        || peli1.CantidadEjemplares <=0 || peli2.CantidadEjemplares <=0){
+                            Console.WriteLine("La Cantidad maxima de ejemplares es 2 o se ingreso dos peliculas con el mismo titulo");
                         }
                         else{
                             pedidos.AgregarPelicula(peli2, peli1);
