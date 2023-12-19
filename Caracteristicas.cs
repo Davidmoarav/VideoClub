@@ -46,7 +46,7 @@ namespace utilidades{
 
         public string? FormadePago{
             get{return formadePago;}
-            set{this.correo = value;}
+            set{this.formadePago = value;}
         }
     }
 

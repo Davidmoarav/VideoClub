@@ -45,7 +45,7 @@ class Program{
                     cliente1.RUT = Console.ReadLine()!.ToUpper();
                     Console.WriteLine("Ingrese correo: ");
                     cliente1.Correo = Console.ReadLine()!.ToUpper();
-                    Console.WriteLine("Ingrese forma de pago");
+                    Console.WriteLine("Ingrese forma de pago: ");
                     cliente1.FormadePago = Console.ReadLine()!.ToUpper();
 
                     break;
@@ -62,11 +62,10 @@ class Program{
 
                         sw.WriteLine(cliente1.MostrarInformacionCliente());
 
-                        Console.WriteLine("Peliculas seleccionadas:\n");
                         pedidos.MostrarPeliculas1(sw);
 
                         sw.WriteLine(pedidos.PrecioTotal());
-                        Console.WriteLine("********************");
+                      
                         sw.WriteLine("Fecha: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
                     }
                     Console.WriteLine("Boleta generada exitosamente.");
@@ -132,8 +131,8 @@ class Program{
                         Console.WriteLine("Ingrese Cantidad de Ejemplares:");
                         int cantidadEjemplares2 = Convert.ToInt32(Console.ReadLine());
                         Pelicula peli2 = new Pelicula(titulo2, genero2, cantidadEjemplares2);
-                        if (archivo.ActualizarInventario(peli1) == false || archivo.ActualizarInventario(peli2) == false){
-                            Console.WriteLine("La Cantidad maxima de ejemplares es 1");
+                        if (peli1.CantidadEjemplares >1 || peli2.CantidadEjemplares > 1  && peli1.Titulo == peli2.Titulo){
+                            Console.WriteLine("La Cantidad maxima de ejemplares es 1 o se ingreso dos peliculas con el mismo titulo");
                         }
                         else{
                             pedidos.AgregarPelicula(peli2, peli1);

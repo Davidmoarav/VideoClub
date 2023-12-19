@@ -62,6 +62,7 @@ namespace VideoClub
             {
                 videoclub.pedido.Remove(peli);
                 Console.WriteLine("Película eliminada exitosamente.");
+
             }
             else
             {

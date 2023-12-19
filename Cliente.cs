@@ -8,7 +8,7 @@ namespace VideoClub
         }
 
         public string MostrarInformacionCliente(){
-            return $"Informacion del Cliente\nNombre: {Nombre}\nApellido: {Apellido}\nRut: {RUT}\nCorreo: {Correo}\nForma de pago: {FormadePago} ";
+            return $"Informacion del Cliente \nNombre: {Nombre} \nApellido: {Apellido} \nRut: {RUT} \nCorreo: {Correo} \nForma de pago: {FormadePago} ";
         }
     }
 }
