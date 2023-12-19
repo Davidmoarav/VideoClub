@@ -128,13 +128,12 @@ class Program{
                         if (peli1.CantidadEjemplares >= 3 || peli2.CantidadEjemplares >= 3 || peli1.Titulo == peli2.Titulo
                         || peli1.CantidadEjemplares <=0 || peli2.CantidadEjemplares <=0){
                             Console.WriteLine("La Cantidad maxima de ejemplares es 2 o se ingreso dos peliculas con el mismo titulo");
-                        }
-                        else if (archivo.ActualizarInventario(peli1) == false || archivo.ActualizarInventario(peli2) == false){
-                            Console.WriteLine("Sin existencias");
-                            
-                        }else{
+                        }   
+                        else{
                             //Console.WriteLine("Sin existencias de uno solicitado");
                             pedidos.AgregarPelicula(peli2, peli1);
+                            archivo.ActualizarInventario(peli1);
+                            archivo.ActualizarInventario(peli2);
                         }
                     }
                     catch (FormatException)
